@@ -1,5 +1,6 @@
-FROM openjdk:11-jre-slim
+FROM python:3.10-slim
+WORKDIR /hello 
 
-COPY target/devops-demo-1.0-SNAPSHOT.jar app.jar
+COPY hello.py
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+CMD ["python","hello.py"]
